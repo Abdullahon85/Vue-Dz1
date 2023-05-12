@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+<div id="app">
+<div class="box">
+            <h1>ДЗ</h1>
+            <form >
+                <button @click="open = !open">зеленный</button>
+                <button @click="open = !open">красный</button>
+                <button @click="open = !open">оранжевый</button>
+            </form>
+            </div>
+            <div class="box">
+                <input type="text" :style="{ background: option1,
+                    background: option2,
+                    background: option3, }" v-if="open" v-model="text">
+            <p v-if="text.length == 0">Поле пустое</p>
+            <p v-else-if="text.length < 21 && !isNaN(text)">Вы ввели число - {{ text }}</p>
+            <p v-else-if="text.length > 20 && !isNaN(text)">Вы ввели число больше 20 - {{ text }}</p>
+            <p v-else="text.length > 1 && !isNaN(text)">Вы ввели not число - {{ text }}</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="mian.js"></script>
+</body>
+</html>
