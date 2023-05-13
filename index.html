@@ -14,20 +14,16 @@
 <div id="app">
 <div class="box">
             <h1>ДЗ</h1>
-            <form >
-                <button @click="open = !open">зеленный</button>
-                <button @click="open = !open">красный</button>
-                <button @click="open = !open">оранжевый</button>
-            </form>
+                <button @click="color = 'green'">зеленный</button>
+                <button @click="color = 'red'">красный</button>
+                <button @click="color = 'orange'">оранжевый</button>
             </div>
             <div class="box">
-                <input type="text" :style="{ background: option1,
-                    background: option2,
-                    background: option3, }" v-if="open" v-model="text">
-            <p v-if="text.length == 0">Поле пустое</p>
-            <p v-else-if="text.length < 21 && !isNaN(text)">Вы ввели число - {{ text }}</p>
-            <p v-else-if="text.length > 20 && !isNaN(text)">Вы ввели число больше 20 - {{ text }}</p>
-            <p v-else="text.length > 1 && !isNaN(text)">Вы ввели not число - {{ text }}</p>
+                <input type="text" v-model="text">
+            <p :style="{ background: color }"  v-if="text.length == 0">Поле пустое</p>
+            <p :style="{ background: color }"  v-else-if="text.length < 21 && !isNaN(text)">Вы ввели число - {{ text }}</p>
+            <p :style="{ background: color }"  v-else-if="text.length > 20 && !isNaN(text)">Вы ввели число больше 20 - {{ text }}</p>
+            <p :style="{ background: color }"  v-else="text.length > 1 && !isNaN(text)">Вы ввели not число - {{ text }}</p>
 
             </div>
         </div>

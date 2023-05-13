@@ -2,12 +2,8 @@ const app = {
     data(){
         return {
             title: 'Дз',
-            option1: 'green',
-            option2: 'orange',
-            option3: 'red',
             text: '',
-            word: '',
-            open: true,
+            color: '',
         }
     },
     methods: {
